@@ -8,7 +8,7 @@
 <script>
 const raw=[
 ["Keyword 1",12500,850,42,1.20,3500],["Keyword 2",9200,620,35,1.50,3150],["Keyword 3",8500,510,28,2.10,4200],["Keyword 4",15000,750,18,.90,1800],["Keyword 5",7800,390,25,1.80,3000],["Keyword 6",6400,480,40,2.00,4400],["Keyword 7",11000,440,12,1.10,1200],["Keyword 8",5500,275,8,1.40,640],["Keyword 9",4800,360,30,1.60,3600],["Keyword 10",10500,525,15,1.30,1500]];
-const d=raw.map(a=>{const cost=a[2]*a[4];return{keyword:a[0],impressions:a[1],clicks:a[2],conversions:a[3],cpc:a[4],value:a[5],cost:cost,cpa:cost/a[3],ctr:a[2]/a[1],rate:a[3]/a[2],roas:a[5]/cost}});
+const d=raw.map((a,i)=>{const cost=a[2]*a[4];return{keyword:"Keyword "+(i+1),impressions:a[1],clicks:a[2],conversions:a[3],cpc:a[4],value:a[5],cost:cost,cpa:cost/a[3],ctr:a[2]/a[1],rate:a[3]/a[2],roas:a[5]/cost}});
 const f=n=>Math.round(n).toLocaleString("en-US"),usd=n=>"$"+n.toFixed(2),usd0=n=>"$"+f(n);
 const cfg={
 clicks:{key:"clicks",dir:-1,focus:"Focus: Drive more website visits",summary:"Ranks by the highest click volume in this sample.",sort:"Ranked by clicks · highest to lowest",reason:x=>"It has "+f(x.clicks)+" clicks, the highest click volume in this sample."},
